@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const galleryEl = document.querySelector('.gallery');
 
 const images = [
@@ -50,11 +53,7 @@ const galleryMarkup = images
     ({ preview, original, description }) => `
     <li class="gallery-item">
       <a class="gallery-link" href="${original}">
-        <img
-          class="gallery-image"
-          src="${preview}"
-          alt="${description}"
-        />
+        <img class="gallery-image" src="${preview}" alt="${description}" />
       </a>
     </li>
   `
@@ -63,7 +62,6 @@ const galleryMarkup = images
 
 galleryEl.innerHTML = galleryMarkup;
 
-// 🔹 Ініціалізація SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captions: true,
   captionsData: 'alt',
